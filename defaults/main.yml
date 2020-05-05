@@ -1,6 +1,6 @@
 ---
 rpmfusion_free_repo_url: "https://download1.rpmfusion.org/free/el/rpmfusion-free-release-{{ ansible_distribution_major_version }}.noarch.rpm"
-rpmfusion_free_repo_gpg_key_url: "etc/pki/rpm-gpg/RPM-GPG-KEY-rpmfusion-free-el-{{ ansible_distribution_major_version }}"
+rpmfusion_free_repo_gpg_key_url: "/etc/pki/rpm-gpg/RPM-GPG-KEY-rpmfusion-free-el-{{ ansible_distribution_major_version }}"
 rpmfusion_free_repo_file: /etc/yum.repos.d/rpmfusion-free-updates.repo
 rpmfusion_free_repo_disabled: true
 rpmfusion_free_repo_remove: true
