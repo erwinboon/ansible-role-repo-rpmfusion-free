@@ -9,7 +9,6 @@
     name: "{{ rpmfusion_free_repo_url }}"
     state: present
   when: not rpmfusion_free_repo_file_exists.stat.exists
-  until: result is succeeded
   notify:
     - yum update cache
 
@@ -27,10 +26,10 @@
     path: "{{ rpmfusion_free_repo_file }}"
     section: rpmfusion-free-updates
     option: enabled
-    value: 0
+    value: "0"
   notify:
     - yum update cache
-  when: rpmfusion_free_repo_disabled
+  when: rpmfusion_free_repo_disabled|bool
 
 - name: Remove  {{ rpmfusion_free_repo_name }}
   yum:
@@ -38,4 +37,4 @@
     state: absent
   notify:
     - yum update cache
-  when: rpmfusion_free_repo_remove
+  when: rpmfusion_free_repo_remove|bool
